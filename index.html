@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FPS Shooter Game</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r148/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cannon.js/0.6.2/cannon.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-900 overflow-hidden">
+    <div id="game-container" class="w-full h-full fixed top-0 left-0">
+        <!-- Three.js canvas will be inserted here -->
+    </div>
+    <div id="ui" class="fixed top-0 left-0 w-full h-full pointer-events-none">
+        <!-- Crosshair -->
+        <div id="crosshair" class="absolute top-1/2 left-1/2 w-4 h-4 -ml-2 -mt-2">
+            <div class="absolute w-full h-0.5 bg-white"></div>
+            <div class="absolute h-full w-0.5 bg-white"></div>
+        </div>
+        <!-- Health Bar -->
+        <div id="health-bar" class="absolute top-4 left-4 w-48 h-6 bg-gray-800 border border-gray-600">
+            <div id="health-fill" class="h-full bg-green-500" style="width: 100%"></div>
+        </div>
+        <!-- Ammo Counter -->
+        <div id="ammo-counter" class="absolute bottom-4 right-4 text-white text-xl font-mono">
+            <span id="current-ammo">30</span>/<span id="max-ammo">30</span>
+        </div>
+        <!-- Score Display -->
+        <div id="score-display" class="absolute top-4 right-4 text-white text-xl font-mono">
+            SCORE: <span id="score">0</span>
+        </div>
+        <!-- Game Over Screen -->
+        <div id="game-over" class="hidden">
+            <h1 class="text-4xl font-bold mb-4">GAME OVER</h1>
+            <p class="text-2xl mb-8">Final Score: <span id="final-score">0</span></p>
+            <button id="restart-btn" class="px-6 py-3 bg-green-600 hover:bg-green-700 rounded-lg text-xl">
+                PLAY AGAIN
+            </button>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
